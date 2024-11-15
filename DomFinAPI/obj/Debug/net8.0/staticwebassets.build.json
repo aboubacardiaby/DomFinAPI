@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "zWjUhQSVipBgJDnEMGex2trKte0bSy4jfXcWUNrnl+A=",
+  "Source": "DomFinAPI",
+  "BasePath": "_content/DomFinAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
