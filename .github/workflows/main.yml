@@ -22,5 +22,5 @@ jobs:
            REPO_URL='https://github.com/aboubacardiaby/DomFinAPI.git';
            BRANCH_NAME=main; 
              if [ -z "$BRANCH_NAME" ]; then
-             echo "Cloning repository: $REPO_URL"
-               git clone "$REPO_URL"
+             echo "Cloning repository: $REPO_URL";
+               git clone "$REPO_URL";
