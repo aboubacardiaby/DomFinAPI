@@ -2,10 +2,10 @@ name: working with workflow
 
 on:
   workflow_dispatch:
-   inputs:
-      homedrive:
-      description: 'Home drive on the machine'
-      required: true
+    inputs:
+        homedrive:
+        description: 'Home drive on the machine'
+        required: true
   
 jobs:
   job_1:
