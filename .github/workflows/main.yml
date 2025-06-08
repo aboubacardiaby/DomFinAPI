@@ -11,7 +11,8 @@ jobs:
   job_1:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "job:${{ github.job }}"
+     - name: Check Out
+       uses:  actions/checkout@v4.2.2
 
   job_2:
     runs-on: ubuntu-latest
