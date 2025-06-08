@@ -11,16 +11,22 @@ jobs:
   job_1:
     runs-on: ubuntu-latest
     steps:
-     - name: Check Out
-       uses:  actions/checkout@v4.2.2
+      - name: Check Out
+        uses: actions/checkout@v4.2.2
 
   job_2:
     runs-on: ubuntu-latest
     needs: job_1
     steps:
-      - run: |
-           REPO_URL='https://github.com/aboubacardiaby/DomFinAPI.git';
-           BRANCH_NAME=main; 
-             if [ -z "$BRANCH_NAME" ]; then
-             echo "Cloning repository: $REPO_URL";
-               git clone "$REPO_URL";
+      - name: Clone Repository
+        run: |
+          REPO_URL='https://github.com/aboubacardiaby/DomFinAPI.git'
+          BRANCH_NAME=main
+          
+          if [ -z "$BRANCH_NAME" ]; then
+            echo "Branch name is empty!"
+            exit 1
+          else
+            echo "Cloning repository: $REPO_URL on branch: $BRANCH_NAME"
+            git clone --branch "$BRANCH_NAME" "$REPO_URL"
+          fi
