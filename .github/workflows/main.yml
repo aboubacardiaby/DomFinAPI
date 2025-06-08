@@ -2,6 +2,18 @@ name: working with workflow
 
 on:
   workflow_dispatch:
+   inputs:
+    homedrive:
+    description: 'Home drive on the machine'
+    required: true
+   loglevel:
+    default: 'Warning'
+    type: choice
+    options:
+     - info
+     - warning
+     - debug
+     
 
 jobs:
   job_1:
