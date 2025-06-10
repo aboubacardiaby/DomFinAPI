@@ -9,12 +9,14 @@ on:
 
 jobs:
   job_1:
+    name: Checkout Code
     runs-on: ubuntu-latest
     steps:
       - name: Check Out
         uses: actions/checkout@v4.2.2
 
   job_2:
+    name: Clone Repository
     runs-on: ubuntu-latest
     needs: job_1
     steps:
@@ -22,7 +24,7 @@ jobs:
         run: |
           REPO_URL='https://github.com/aboubacardiaby/DomFinAPI.git'
           BRANCH_NAME=main
-          
+
           if [ -z "$BRANCH_NAME" ]; then
             echo "Branch name is empty!"
             exit 1
@@ -30,3 +32,17 @@ jobs:
             echo "Cloning repository: $REPO_URL on branch: $BRANCH_NAME"
             git clone --branch "$BRANCH_NAME" "$REPO_URL"
           fi
+
+  job_3:
+    name: Matrix Node Setup
+    strategy:
+      fail-fast: false
+      matrix:
+        os_version: [macos-latest, ubuntu-latest]
+        node_version: [12, 14, 16]
+    runs-on: ${{ matrix.os_version }}
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@v5.6.0
+        with:
+          node-version: ${{ matrix.node_version }}
