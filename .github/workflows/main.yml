@@ -34,6 +34,7 @@ jobs:
           fi
 
   job_3:
+    if: ${{ github.ref == 'refs/heads/main' }}
     name: Matrix Node Setup
     strategy:
       fail-fast: false
