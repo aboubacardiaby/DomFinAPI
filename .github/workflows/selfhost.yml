@@ -2,7 +2,7 @@ name: deployment with Self Host runner
 on: workflow_dispatch
 jobs:
   init:
-   runs-on: self-host
+   runs-on: workstation
    steps:
     - run: echo 'Hello abou'
     - run: echo  $HOSTNAME
