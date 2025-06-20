@@ -11,5 +11,6 @@ jobs:
         run:  |
            the_secret=$((RANDOM))
            echo "::add-mask::$the_secret"
+           echo $the_secret
            echo ":: error file=app.js, line=1 ::missing semicolon"
    
