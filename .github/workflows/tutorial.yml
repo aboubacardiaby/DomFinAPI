@@ -14,7 +14,8 @@ jobs:
            echo '### Hello World! :rocket:' >> $GITHUB_STEP_SUMMARY
            echo ":: error file=app.js, line=1 ::missing semicolon"
            echo $GITHUB_STEP_SUMMARY
-     - name : Write summary in Action
+    
+     - name: Write summary in Action
        uses: actions/github-script@v7.0.1
        with:
            script: |
@@ -22,6 +23,9 @@ jobs:
              .addHeading('Test Result')
              .addTable([
                [(data: 'File', header: true), {data: 'Result', header: true)], 
-                ['foo.js', 'pass ']
+                ['foo.js', 'pass'],
+                ['bar.js', 'Pass'],
+                ['Test','Pass']
                 ])
+                .addLink('View Staging Deployment!','https://github.com')
                 .write()
