@@ -11,7 +11,7 @@ jobs:
         run:  |
            the_secret=$((RANDOM))
            echo "::add-mask::$the_secret"
-           echo '### Hello World! ::rocket:' >> "$GITHUB_OUTPUT"
+           echo '### Hello World! ::rocket:' >> $GITHUB_STEP_SUMMARY
            echo ":: error file=app.js, line=1 ::missing semicolon"
-           echo $GITHUB_OUTPUT
+           echo $GITHUB_STEP_SUMMARY
    
