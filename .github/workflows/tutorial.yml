@@ -21,7 +21,7 @@ jobs:
              await core.summary
              .addHeading('Test Result')
              .addTable([
-               [(data: 'File', header:true), {data: 'Result', header:true)], 
+               [(data: 'File', header: true), {data: 'Result', header: true)], 
                 ['foo.js', 'pass ']
                 ])
                 .write()
