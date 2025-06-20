@@ -1,0 +1,13 @@
+name: tutorial workflow
+
+on: [push, workflow_dispatch]
+
+jobs:
+ job_1:
+   name: this is job number 1
+   runs-on: ubuntu-latest
+   steps:
+     -  name: first step
+        run:  |
+           echo ":: error file=app.js, line=1 ::missing semicolon"
+   
