@@ -9,5 +9,7 @@ jobs:
    steps:
      -  name: first step
         run:  |
+           the_scret=$((RANDOM))
+           echo the_secret
            echo ":: error file=app.js, line=1 ::missing semicolon"
    
